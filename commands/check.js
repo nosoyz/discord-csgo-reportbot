@@ -10,26 +10,26 @@ module.exports.run = async(bot, message, args) => {
         if (!error && response.statusCode == 200) {
             if (body.includes('"NumberOfVACBans":1' || '"NumberOfVACBans":2' || '"NumberOfVACBans":3' || '"NumberOfGameBans":2' || '"NumberOfGameBans":3' && '"DaysSinceLastBan":0' || '"DaysSinceLastBan":1' || '"DaysSinceLastBan":2')) {
                 let checkBanned = new Discord.RichEmbed()
-                    .setDescription("Discord Steam feature BOT by OurmineOGTv")
+                    .setDescription("Discord Steam feature BOT by z!")
                     .setColor("#00ff08")
-                    .addField(`:tada: [${id}](https://steamcommunity.com/profiles/${id}) is banned.`, "Credits: OurmineOGTv | **OGTvDevils.eu**")
-                    .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                    .addField(`:tada: [${id}](https://steamcommunity.com/profiles/${id}) is banned.`, "Credits: z! | nosoyz")
+                    
                 message.channel.send(checkBanned).then(m => m.delete(20000));
             } else {
                 let checkNoBanned = new Discord.RichEmbed()
-                    .setDescription("Discord Steam feature BOT by OurmineOGTv")
+                    .setDescription("Discord Steam feature BOT by z!")
                     .setColor("#00ff08")
-                    .addField("Credits: OurmineOGTv | **OGTvDevils.eu**", `${id} is not banned.`)
-                    .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                    .addField("Credits: z! | nosoyz", `${id} is not banned.`)
+                    
                 message.channel.send(checkNoBanned).then(m => m.delete(20000));
             }
 
         } else {
             let checkBannedError = new Discord.RichEmbed()
-                .setDescription("Discord Steam feature BOT by OurmineOGTv")
+                .setDescription("Discord Steam feature BOT by z!")
                 .setColor("#f50000")
-                .addField("Credits: OurmineOGTv | **OGTvDevils.eu**", "Steam Error.. Please try again later..")
-                .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                .addField("Credits: z! | nosoyz", "Steam Error.. Please try again later..")
+                
             message.channel.send(checkBannedError).then(m => m.delete(20000));
         }
     });

@@ -1,5 +1,5 @@
 {
-    "prefix": "^",
-    "steamKey": "YOUR_STEAM_API_KEY",
-    "botToken": "YOUR_DISCORD_BOT_KEY"
+    "prefix": "!s",
+    "steamKey": "E7887557EDF89AEBF027DCEEB6C36CBB",
+    "botToken": "ODUxMzc2MjgwODU0MjAwMzM5.YL3X8w.6AQ-pyUhkiC1w7VgIurkcc-zZP4"
 }

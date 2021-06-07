@@ -77,22 +77,22 @@ module.exports.run = async(bot, message, args) => {
                 if (res.eresult !== Steam.EResult.OK) {
                     if (res.eresult == Steam.EResult.ServiceUnavailable) {
                         let errLoginAcc1 = new Discord.RichEmbed()
-                            .setTitle("Error ReportBOT write to: OurmineOGtv")
-                            .setDescription("Discord ReportBOT by OurmineOGTv")
+                            .setTitle("Error ReportBOT write to: !z")
+                            .setDescription("Discord ReportBOT by !z")
                             .setColor("#ff0000")
                             .addField(`[STEAM CLIENT]`, "Login failed - STEAM IS DOWN!")
-                            .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                            
                         message.channel.send(errLoginAcc1).then(m => m.delete(60000));
                         //message.channel.send("\n[STEAM CLIENT - Login failed - STEAM IS DOWN!");
                         SteamClients[indexElement].disconnect();
                         process.exit();
                     } else {
                         let errLoginAcc2 = new Discord.RichEmbed()
-                            .setTitle("Error ReportBOT write to: OurmineOGtv")
-                            .setDescription("Discord ReportBOT by OurmineOGTv")
+                            .setTitle("Error ReportBOT write to: !z")
+                            .setDescription("Discord ReportBOT by !z")
                             .setColor("#ff0000")
                             .addField(`[STEAM CLIENT]`, account_name.substring(0, 4) + `- Login failed!` + res.eresult)
-                            .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                            
                         message.channel.send(errLoginAcc2).then(m => m.delete(60000));
                         //message.channel.send("\n[STEAM CLIENT (" + account_name.substring(0, 4) + "**) - Login failed!" + res.eresult);
                         SteamClients[indexElement].disconnect();
@@ -133,11 +133,11 @@ module.exports.run = async(bot, message, args) => {
             SteamClients[indexElement].on("error", function(err) {
 
                 let errLoginAcc3 = new Discord.RichEmbed()
-                    .setTitle("Error ReportBOT write to: OurmineOGtv")
-                    .setDescription("Discord ReportBOT by OurmineOGTv")
+                    .setTitle("Error ReportBOT write to: !z")
+                    .setDescription("Discord ReportBOT by !z")
                     .setColor("#ff0000")
                     .addField(`[STEAM CLIENT]`, indexElement + " Account is probably ingame! Logged out!\n" + err)
-                    .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                    
                 message.channel.send(errLoginAcc3).then(m => m.delete(60000));
                 //message.channel.send("[STEAM CLIENT - " + indexElement + "] Account is probably ingame! Logged out!\n" + err);
                 size = size - 1;
@@ -164,17 +164,17 @@ module.exports.run = async(bot, message, args) => {
                         break;
                     case Protos.ECsgoGCMsg.k_EMsgGCCStrike15_v2_ClientReportResponse:
                         CountReports++;
-                        message.channel.send(`\`\`\`[Discord Report BOT by OurmineOGTv] - [` + CountReports + `] report with confirmation ID: ` + Protos.CMsgGCCStrike15_v2_ClientReportResponse.decode(buffer).confirmationId.toString() + ` sent!\`\`\``).then(m => m.delete(120000));
-                        //message.channel.send("[Discord Report Bot by OGTvDevils.eu] - (" + CountReports + ")] Report with confirmation ID: " + Protos.CMsgGCCStrike15_v2_ClientReportResponse.decode(buffer).confirmationId.toString() + " sent!");
+                        message.channel.send(`\`\`\`[Discord Report BOT by !z] - [` + CountReports + `] report with confirmation ID: ` + Protos.CMsgGCCStrike15_v2_ClientReportResponse.decode(buffer).confirmationId.toString() + ` sent!\`\`\``).then(m => m.delete(120000));
+                        //message.channel.send("[Discord Report Bot] - (" + CountReports + ")] Report with confirmation ID: " + Protos.CMsgGCCStrike15_v2_ClientReportResponse.decode(buffer).confirmationId.toString() + " sent!");
                         if (CountReports == size) {
                             let thxReport = new Discord.RichEmbed()
-                                .setDescription("Discord ReportBOT by OurmineOGTv")
+                                .setDescription("Discord ReportBOT by !z")
                                 .setColor("#00ff08")
-                                .addField(`[Discord Report BOT by OurmineOGTv] - [` + CountReports + `] Reports for this faggot.\nThanks for using Discord Report Bot by OGTvDevils.eu`, "Credits: OurmineOGTv | **OGTvDevils.eu**")
+                                .addField(`[Discord Report BOT by !z] - [` + CountReports + `] Reports for this faggot.\nThanks for using Discord Report Bot`, "Credits: !z | nosoyz")
                                 .addField("Check this faggot account: ", `https://steamcommunity.com/profiles/${steamID}`)
-                                .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+                                
                             message.member.send(thxReport);
-                            //message.channel.send("\n\n" + CountReports + " Reports for this faggot.\nThanks for using Discord Report Bot by OGTvDevils.eu");
+                            //message.channel.send("\n\n" + CountReports + " Reports for this faggot.\nThanks for using Discord Report Bot");
                         }
                         SteamClients[indexElement].disconnect();
                         SteamClients.splice(indexElement, 1);
@@ -210,17 +210,17 @@ module.exports.run = async(bot, message, args) => {
     process.on("uncaughtException", function(err) {});
 
     let channelInfoEmbed = new Discord.RichEmbed()
-        .setDescription("Discord ReportBOT by OurmineOGTv")
+        .setDescription("Discord ReportBOT by !z")
         .setColor("#00ff08")
-        .addField("Initializing Discord Report Bot by OGTvDevils.eu", "Credits: OurmineOGTv | **OGTvDevils.eu**")
-        .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+        .addField("Initializing Discord Report Bot", "Credits: !z | nosoyz")
+        
     message.channel.send(channelInfoEmbed).then(m => m.delete(20000));
 
     let channelInfo2Embed = new Discord.RichEmbed()
-        .setDescription("Discord ReportBOT by OurmineOGTv")
+        .setDescription("Discord ReportBOT by !z")
         .setColor("#00ff08")
         .addField(`Reporting SteamID: **${steamID}**`, "\nStarting Accounts...")
-        .setFooter("Powered by ©2019 - 2019 OGTVDevils.eu");
+        
     message.channel.send(channelInfo2Embed).then(m => m.delete(20000));
 
 }
